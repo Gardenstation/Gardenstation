@@ -1,0 +1,12 @@
+﻿- type: entity
+  id: ProjectilePolyboltMouse
+  parent: ProjectilePolyboltBase
+  name: mouse polybolt
+  description: Nooo, I don't wanna be mouse!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PolymorphOnCollide
+    polymorph: WizardForcedMouse
+    whitelist:
+      components:
+      - Body

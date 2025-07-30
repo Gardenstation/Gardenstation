@@ -174,18 +174,6 @@
       types:
         Poison: 5
 
-- type: entity
-  id: ProjectilePolyboltCarp
-  parent: ProjectilePolyboltBase
-  name: carp polybolt
-  description: Nooo, I don't wanna be fish!
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: PolymorphOnCollide
-    polymorph: WizardForcedCarp
-    whitelist:
-      components:
-      - Body
 
 - type: entity
   id: ProjectilePolyboltMonkey

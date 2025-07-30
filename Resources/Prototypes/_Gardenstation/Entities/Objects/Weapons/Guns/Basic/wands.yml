@@ -1,0 +1,10 @@
+﻿- type: entity
+  name: wand of mouse polymorph
+  parent: WeaponWandPolymorphBase
+  id: WeaponWandPolymorphMouse
+  description: For mouse.
+  components:
+  - type: BasicEntityAmmoProvider
+    proto: ProjectilePolyboltMouse
+    capacity: 5
+    count: 5
