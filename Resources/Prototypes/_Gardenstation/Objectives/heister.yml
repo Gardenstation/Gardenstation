@@ -1,0 +1,103 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseHeisterObjective
+  components:
+  - type: Objective
+    issuer: objective-issuer-heister
+  - type: RoleRequirement
+    roles:
+      mindRoles:
+      - HeisterRole
+
+- type: entity
+  abstract: true
+  parent: [BaseHeisterObjective, BaseStealObjective]
+  id: BaseHeisterStealObjective
+  components:
+  - type: StealCondition
+    verifyMapExistence: false
+    descriptionText: objective-condition-heister-description
+    checkStealAreas: true
+
+- type: entity
+  abstract: true
+  parent: [BaseHeisterObjective, BaseHeisterStealObjective]
+  id: BaseHeisterStealCollectionObjective
+  components:
+  - type: StealCondition
+    verifyMapExistence: true
+
+- type: entity
+  abstract: true
+  parent: [BaseHeisterObjective, BaseHeisterStealObjective]
+  id: BaseHeisterStealStructureObjective
+  components:
+  - type: StealCondition
+    verifyMapExistence: true
+  - type: Objective
+    difficulty: 2 # it's hard to hide
+
+- type: entity
+  abstract: true
+  parent: [BaseHeisterObjective, BaseHeisterStealObjective]
+  id: BaseHeisterStealAnimalObjective
+  components:
+  - type: StealCondition
+    verifyMapExistence: false
+    checkAlive: true
+    objectiveNoOwnerText: objective-condition-steal-title-alive-no-owner
+    descriptionText: objective-condition-heister-animal-description
+  - type: Objective
+    difficulty: 2 # it's hard to hide
+
+# Collections
+
+
+# steal item
+
+
+
+
+
+
+# Structures
+
+- type: entity
+  parent: BaseHeisterStealStructureObjective
+  id: NuclearBombStealObjective
+  components:
+  - type: NotJobRequirement
+    job: Captain
+  - type: StealCondition
+    stealGroup: NuclearBomb
+  - type: Objective
+    difficulty: 2.5 #Good luck
+
+- type: entity
+  parent: BaseHeisterStealStructureObjective
+  id: TegStealObjective
+  components:
+  - type: NotJobRequirement
+    job: AtmosphericTechnician
+  - type: StealCondition
+    stealGroup: Teg
+  - type: Objective
+    difficulty: 1
+
+
+# Escape
+
+- type: entity
+  parent: [BaseHeisterObjective, BaseLivingObjective]
+  id: EscapeHeisterShuttleObjective
+  name: Return to the hideout to enjoy your spoils.
+  description: Make sure you actually make it back with the goods. Shake the feds, return safe, then PAYDIRT.
+  components:
+  - type: Objective
+    difficulty: 1.3
+    icon:
+      sprite: Structures/Furniture/chairs.rsi
+      state: shuttle
+  - type: EscapeShuttleCondition
+]

@@ -1,0 +1,12 @@
+- type: antag
+  id: Heister
+  name: roles-antag-heister-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-heister-objective
+
+- type: startingGear
+  id: HeisterGear
+  storage:
+    back:
+    - ClothingHandsChameleonThief
